@@ -93,6 +93,8 @@ button:active, button:visited {
     background-color: black;
 }
 button:hover{
-    background-color:gray;
+    background-color:black;
+    color:white;
+    box-shadow: 0 0 50px 2px white;
     
 }
