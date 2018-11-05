@@ -81,10 +81,11 @@ body{
 
 .changeTheme{
     display: flex;
-    border-radius: 30px; 
+    border-radius: 2px; 
     font-size: 1.3rem;
     cursor: pointer;
     margin-bottom: 0.5%;
+    box-shadow: 0 0 30px 2px white;
     padding: 1%;
     border:none;
 }

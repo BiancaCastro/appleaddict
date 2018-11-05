@@ -59,6 +59,9 @@ Game.prototype.move = function() {
   });
 };
 
+
+
+
 Game.prototype.start = function() {
   this.interval = setInterval(
     function() {
@@ -66,8 +69,8 @@ Game.prototype.start = function() {
       this.draw();
       this.move();
       if (this.collision()) {
-      
       }
+    
     }.bind(this),
     1000 / this.fps
   );
