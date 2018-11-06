@@ -63,13 +63,29 @@ Game.prototype.move = function() {
 };
 
 Game.prototype.counter = function(object) {
-  console.log(object.name);
   if (object.name === "apple") {
     this.score += 1;
   }
   if (object.name === "microsoft") {
     this.score -= 2;
   }
+  if (this.score < 0) {
+    this.gameOver();
+  }
+  if (this.score >= 3) {
+    this.level++;
+    this.score=0;   
+  }
+};
+
+
+Game.prototype.stop = function() {
+  clearInterval(this.interval);
+};
+
+Game.prototype.gameOver = function() {
+  this.stop();
+  console.log("FINAL");
 };
 
 Game.prototype.start = function() {
@@ -79,7 +95,8 @@ Game.prototype.start = function() {
       this.draw();
       this.move();
       if (this.collision()) {
-       console.log(this.score)
+        console.log(this.score)
+        console.log(this.level);
       }
     }.bind(this),
     1000 / this.fps
