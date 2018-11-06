@@ -2,7 +2,6 @@ function Game(canvas) {
   this.canvas = document.getElementById(canvas);
   this.ctx = this.canvas.getContext("2d");
   this.fps = 60;
-
   this.reset();
   this.generateObjects();
 }
@@ -45,8 +44,9 @@ Game.prototype.collision = function() {
         this.player.y + this.player.h >= object.y &&
         object.y + object.h >= this.player.y
       ){
-          object.y=-200;
-          object.x=(Math.random()*550)
+          object.y=-100;
+          object.x=200;
+          console.log(object.name)
           return true
       }
     }.bind(this)

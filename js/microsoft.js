@@ -1,5 +1,6 @@
 function Microsoft (game){
     this.game=game;
+    this.name="microsoft";
     this.imgMicro= new Image();
     this.imgMicro.src= "imagenes/microsoft.png";
     this.x=200;

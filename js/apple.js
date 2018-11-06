@@ -1,6 +1,6 @@
 function Apple (game){
     this.game = game;
-
+    this.name="apple";
     this.imgApple =new Image();
     this.imgApple.src = 'imagenes/apple.png';
     this.x=500;
