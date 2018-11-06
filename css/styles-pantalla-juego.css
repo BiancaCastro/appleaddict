@@ -62,14 +62,14 @@ body{
     justify-content: flex-end;
     background-color: white;
     color:black; 
-    margin:0.9% 6% 0 6%;
+    margin:0.9% 10% 0 6%;
     box-shadow: 0 0 5px 1px white;
 }
 
 
 
 #apple-menu{
-    margin-right: 400px;
+    margin: -10px 350px 0px 0;
 }
 #header div{
     margin: 2% 10% 1% 0;
@@ -98,4 +98,7 @@ button:hover{
     background-color:black;
     color:white;
     box-shadow: 0 0 50px 2px white;
+}
+#level-js, #points-js{
+    font-weight: bold;
 }

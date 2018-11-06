@@ -7,6 +7,8 @@ function Game(canvas) {
   this.reset();
   this.generateObjects();
   this.changeBackground();
+  this.changeBackground2();
+  this.changeBackground3();
 }
 
 Game.prototype.reset = function() {
@@ -47,6 +49,7 @@ Game.prototype.collision = function() {
         this.player.y + this.player.h >= object.y &&
         object.y + object.h >= this.player.y
       ) {
+        console.log("collision")
         this.counter(object);
         object.y = -100;
         object.x = Math.random() * 550;
@@ -106,7 +109,20 @@ Game.prototype.start = function() {
 Game.prototype.changeBackground = function(image) {
   var rural = document.getElementById("rural");
   rural.addEventListener("click", function(event) {
-    console.log("click")
     this.background.imgBack.src = "imagenes/rural.jpg";
+  }.bind(this));
+};
+
+Game.prototype.changeBackground2 = function(image) {
+  var city = document.getElementById("city");
+  city.addEventListener("click", function(event) {
+    this.background.imgBack.src = "imagenes/city.jpg";
+  }.bind(this));
+};
+
+Game.prototype.changeBackground3 = function(image) {
+  var space = document.getElementById("space");
+  space.addEventListener("click", function(event) {
+    this.background.imgBack.src = "imagenes/fondo3.jpg";
   }.bind(this));
 };
