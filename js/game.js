@@ -45,7 +45,8 @@ Game.prototype.collision = function() {
         this.player.y + this.player.h >= object.y &&
         object.y + object.h >= this.player.y
       ){
-          this.objects.splice(this.objects.indexOf(object), 1)
+          object.y=-200;
+          object.x=(Math.random()*550)
           return true
       }
     }.bind(this)
@@ -58,8 +59,6 @@ Game.prototype.move = function() {
     object.move();
   });
 };
-
-
 
 
 Game.prototype.start = function() {
