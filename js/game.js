@@ -6,6 +6,7 @@ function Game(canvas) {
   this.level = 0;
   this.reset();
   this.generateObjects();
+  this.changeBackground();
 }
 
 Game.prototype.reset = function() {
@@ -48,7 +49,7 @@ Game.prototype.collision = function() {
       ) {
         this.counter(object);
         object.y = -100;
-        object.x = (Math.random()*550);
+        object.x = Math.random() * 550;
         return true;
       }
     }.bind(this)
@@ -64,22 +65,22 @@ Game.prototype.move = function() {
 
 Game.prototype.counter = function(object) {
   if (object.name === "apple") {
-    document.getElementById("points-js").innerHTML =this.score += 1;
+    document.getElementById("points-js").innerHTML = this.score += 1;
   }
   if (object.name === "microsoft") {
-    document.getElementById("points-js").innerHTML =this.score -= 2;
+    document.getElementById("points-js").innerHTML = this.score -= 2;
   }
   if (this.score < 0) {
     this.gameOver();
   }
   if (this.score >= 10) {
-    document.getElementById("level-js").innerHTML=this.level+=1;
-    if(this.score=10){
-      document.getElementById("points-js").innerHTML=this.score=0;  
-    } 
+    document.getElementById("level-js").innerHTML = this.level += 1;
+
+    if ((this.score = 10)) {
+      document.getElementById("points-js").innerHTML = this.score = 0;
+    }
   }
 };
-
 
 Game.prototype.stop = function() {
   clearInterval(this.interval);
@@ -87,7 +88,6 @@ Game.prototype.stop = function() {
 
 Game.prototype.gameOver = function() {
   this.stop();
-  console.log("FINAL");
 };
 
 Game.prototype.start = function() {
@@ -97,17 +97,16 @@ Game.prototype.start = function() {
       this.draw();
       this.move();
       if (this.collision()) {
-        console.log(this.level);
-        console.log(this.score)
-       
       }
     }.bind(this),
     1000 / this.fps
   );
 };
 
-//Change HTML
-Game.prototype.write=function(){
-
-  document.getElementById("points").innerHTML = "Paragraph changed!";
-}
+Game.prototype.changeBackground = function(image) {
+  var rural = document.getElementById("rural");
+  rural.addEventListener("click", function(event) {
+    console.log("click")
+    this.background.imgBack.src = "imagenes/rural.jpg";
+  }.bind(this));
+};
