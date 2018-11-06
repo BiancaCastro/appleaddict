@@ -2,6 +2,8 @@ function Game(canvas) {
   this.canvas = document.getElementById(canvas);
   this.ctx = this.canvas.getContext("2d");
   this.fps = 60;
+  this.score = 0;
+  this.level = 1;
   this.reset();
   this.generateObjects();
 }
@@ -43,11 +45,11 @@ Game.prototype.collision = function() {
         this.player.x < object.x + object.w &&
         this.player.y + this.player.h >= object.y &&
         object.y + object.h >= this.player.y
-      ){
-          object.y=-100;
-          object.x=200;
-          console.log(object.name)
-          return true
+      ) {
+        this.counter(object);
+        object.y = -100;
+        object.x = 200;
+        return true;
       }
     }.bind(this)
   );
@@ -60,6 +62,15 @@ Game.prototype.move = function() {
   });
 };
 
+Game.prototype.counter = function(object) {
+  console.log(object.name);
+  if (object.name === "apple") {
+    this.score += 1;
+  }
+  if (object.name === "microsoft") {
+    this.score -= 2;
+  }
+};
 
 Game.prototype.start = function() {
   this.interval = setInterval(
@@ -68,8 +79,8 @@ Game.prototype.start = function() {
       this.draw();
       this.move();
       if (this.collision()) {
+       console.log(this.score)
       }
-    
     }.bind(this),
     1000 / this.fps
   );
