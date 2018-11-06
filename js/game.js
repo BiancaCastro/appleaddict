@@ -3,7 +3,7 @@ function Game(canvas) {
   this.ctx = this.canvas.getContext("2d");
   this.fps = 60;
   this.score = 0;
-  this.level = 1;
+  this.level = 0;
   this.reset();
   this.generateObjects();
 }
@@ -48,7 +48,7 @@ Game.prototype.collision = function() {
       ) {
         this.counter(object);
         object.y = -100;
-        object.x = 200;
+        object.x = (Math.random()*550);
         return true;
       }
     }.bind(this)
@@ -64,17 +64,19 @@ Game.prototype.move = function() {
 
 Game.prototype.counter = function(object) {
   if (object.name === "apple") {
-    this.score += 1;
+    document.getElementById("points-js").innerHTML =this.score += 1;
   }
   if (object.name === "microsoft") {
-    this.score -= 2;
+    document.getElementById("points-js").innerHTML =this.score -= 2;
   }
   if (this.score < 0) {
     this.gameOver();
   }
-  if (this.score >= 3) {
-    this.level++;
-    this.score=0;   
+  if (this.score >= 10) {
+    document.getElementById("level-js").innerHTML=this.level+=1;
+    if(this.score=10){
+      document.getElementById("points-js").innerHTML=this.score=0;  
+    } 
   }
 };
 
@@ -95,10 +97,17 @@ Game.prototype.start = function() {
       this.draw();
       this.move();
       if (this.collision()) {
-        console.log(this.score)
         console.log(this.level);
+        console.log(this.score)
+       
       }
     }.bind(this),
     1000 / this.fps
   );
 };
+
+//Change HTML
+Game.prototype.write=function(){
+
+  document.getElementById("points").innerHTML = "Paragraph changed!";
+}
