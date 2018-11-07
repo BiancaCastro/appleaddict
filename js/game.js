@@ -97,6 +97,7 @@ Game.prototype.incrementLevel = function() {
 
 Game.prototype.stop = function() {
   clearInterval(this.interval);
+  document.querySelector("#game-over").style.display="block";
 };
 
 Game.prototype.gameOver = function() {
@@ -116,6 +117,7 @@ Game.prototype.start = function() {
     1000 / this.fps
   );
 };
+
 
 Game.prototype.setBackgroundChangersListneners = function(image) {
   document.getElementById("rural").addEventListener(
