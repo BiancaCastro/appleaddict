@@ -101,8 +101,8 @@ button:hover{
 
 #canvas {
     position: absolute;
-    top:14%;
-    left:30%;
+    top:12%;
+    left:45%;
     border:1px solid black;
     
 }
@@ -121,30 +121,35 @@ body{
     box-shadow: 0 0 5px 1px white;
 }
 
-
-
 #apple-menu{
-    margin: -10px 350px 0px 0;
+    margin: -10px 450px 0px 0;
 }
 #header div{
     margin: 2% 10% 1% 0;
 }
 
 .backgrounds{
-    margin: 38% 0 0 20%;
+    margin: 10% 0 0 10%;
 }
 
 .changeTheme{
-    display: flex;
+    display: block;
     border-radius: 2px; 
     font-size: 1.3rem;
     cursor: pointer;
-    margin-bottom: 0.5%;
+    margin-bottom: 10.5%;
     box-shadow: 0 0 30px 2px white;
-    padding: 1%;
+    padding: 1% 11% 1% 10%;
     border:none;
+    box-sizing: border-box;
 }
 
+#city, #rural{
+padding: 1% 13% 1.5% 13%;    
+}
+#city{
+    padding: 1% 14% 1.5% 13%
+}
 button:active, button:visited {
     color: white;
     background-color: black;
@@ -161,14 +166,13 @@ button:hover{
     display:none;
 }
 
-
 #game-over{
     width: 300px;
     height: 80px;
     border:1px solid white;
     position:absolute;
     top:40%;
-    left:40%;
+    left:55%;
     display:none;
     background: black;
     opacity: 1;
@@ -180,9 +184,11 @@ button:hover{
     text-align: center;
 }
 
-
 @keyframes finalGame{
     0%{opacity: 0.2}
     10% {opacity: 1}
     
+}
+#audio{
+    visibility: hidden;
 }

@@ -98,6 +98,7 @@ Game.prototype.incrementLevel = function() {
 Game.prototype.stop = function() {
   clearInterval(this.interval);
   document.querySelector("#game-over").style.display="block";
+  document.querySelector("#audio").src="./audio/gameOverFinal.mp3";
 };
 
 Game.prototype.gameOver = function() {
@@ -124,6 +125,7 @@ Game.prototype.setBackgroundChangersListneners = function(image) {
     "click",
     function(event) {
       this.background.imgBack.src = "imagenes/rural.jpg";
+      document.querySelector("#audio").src="./audio/ruralMusic.mp3";
     }.bind(this)
   );
   
@@ -131,6 +133,7 @@ Game.prototype.setBackgroundChangersListneners = function(image) {
     "click",
     function(event) {
       this.background.imgBack.src = "imagenes/city.jpg";
+      document.querySelector("#audio").src="./audio/cityMusic.mp3";
     }.bind(this)
   );
 
@@ -138,6 +141,7 @@ Game.prototype.setBackgroundChangersListneners = function(image) {
     "click",
     function(event) {
       this.background.imgBack.src = "imagenes/fondo3.jpg";
+      document.querySelector("#audio").src="./audio/spaceMusic.mp3";
     }.bind(this)
   );
 };
