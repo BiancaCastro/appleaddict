@@ -6,9 +6,8 @@ function Game(canvas) {
   this.level = 0;
   this.reset();
   this.generateObjects();
-  this.changeBackground();
-  this.changeBackground2();
-  this.changeBackground3();
+  this.setBackgroundChangersListneners();
+  this.incrementLevel();
 }
 
 Game.prototype.reset = function() {
@@ -49,7 +48,6 @@ Game.prototype.collision = function() {
         this.player.y + this.player.h >= object.y &&
         object.y + object.h >= this.player.y
       ) {
-        console.log("collision")
         this.counter(object);
         object.y = -100;
         object.x = Math.random() * 550;
@@ -66,23 +64,35 @@ Game.prototype.move = function() {
   });
 };
 
+Game.prototype.refreshResult = function() {
+  document.getElementById("level-js").innerHTML = this.level;
+  document.getElementById("points-js").innerHTML = this.score;
+};
+
 Game.prototype.counter = function(object) {
   if (object.name === "apple") {
-    document.getElementById("points-js").innerHTML = this.score += 1;
+    this.score++;
   }
   if (object.name === "microsoft") {
-    document.getElementById("points-js").innerHTML = this.score -= 2;
+    this.score -= 2;
   }
   if (this.score < 0) {
     this.gameOver();
   }
-  if (this.score >= 10) {
-    document.getElementById("level-js").innerHTML = this.level += 1;
+  if (this.score >= 4) {
+    this.level++;
+    this.score = 0;
 
-    if ((this.score = 10)) {
-      document.getElementById("points-js").innerHTML = this.score = 0;
-    }
+    this.incrementLevel();
   }
+
+  this.refreshResult();
+};
+
+Game.prototype.incrementLevel = function() {
+  this.objects.forEach(function(oneObject) {
+    oneObject.vy += 2;
+  });
 };
 
 Game.prototype.stop = function() {
@@ -99,6 +109,7 @@ Game.prototype.start = function() {
       this.clear();
       this.draw();
       this.move();
+
       if (this.collision()) {
       }
     }.bind(this),
@@ -106,23 +117,25 @@ Game.prototype.start = function() {
   );
 };
 
-Game.prototype.changeBackground = function(image) {
-  var rural = document.getElementById("rural");
-  rural.addEventListener("click", function(event) {
-    this.background.imgBack.src = "imagenes/rural.jpg";
-  }.bind(this));
-};
+Game.prototype.setBackgroundChangersListneners = function(image) {
+  document.getElementById("rural").addEventListener(
+    "click",
+    function(event) {
+      this.background.imgBack.src = "imagenes/rural.jpg";
+    }.bind(this)
+  );
+  
+  document.getElementById("city").addEventListener(
+    "click",
+    function(event) {
+      this.background.imgBack.src = "imagenes/city.jpg";
+    }.bind(this)
+  );
 
-Game.prototype.changeBackground2 = function(image) {
-  var city = document.getElementById("city");
-  city.addEventListener("click", function(event) {
-    this.background.imgBack.src = "imagenes/city.jpg";
-  }.bind(this));
-};
-
-Game.prototype.changeBackground3 = function(image) {
-  var space = document.getElementById("space");
-  space.addEventListener("click", function(event) {
-    this.background.imgBack.src = "imagenes/fondo3.jpg";
-  }.bind(this));
+  document.getElementById("space").addEventListener(
+    "click",
+    function(event) {
+      this.background.imgBack.src = "imagenes/fondo3.jpg";
+    }.bind(this)
+  );
 };

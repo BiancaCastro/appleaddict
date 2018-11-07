@@ -3,11 +3,11 @@ function Apple (game){
     this.name="apple";
     this.imgApple =new Image();
     this.imgApple.src = 'imagenes/apple.png';
-    this.x=500;
+    this.x=200;
     this.y=20;
     this.w=50;
     this.h=50;
-    this.vy=1;
+    this.vy=2;
 }
 
 

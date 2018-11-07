@@ -3,11 +3,11 @@ function Microsoft (game){
     this.name="microsoft";
     this.imgMicro= new Image();
     this.imgMicro.src= "imagenes/microsoft.png";
-    this.x=200;
+    this.x=400;
     this.y=20;
     this.w=40;
     this.h=40;
-    this.vy=1;
+    this.vy=2;
 
 }
 

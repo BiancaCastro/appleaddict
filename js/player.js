@@ -6,7 +6,7 @@ function Player(game) {
   this.y = 450;
   this.w = 200;
   this.h = 240;
-  this.vx=40;
+  this.vx=50;
   this.setListeners();
 }
 
