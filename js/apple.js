@@ -7,7 +7,7 @@ function Apple (game){
     this.y=20;
     this.w=50;
     this.h=50;
-    this.vy=2;
+    this.vy=1.5;
 }
 
 

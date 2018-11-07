@@ -98,3 +98,65 @@ button:hover{
     box-shadow: 0 0 50px 2px white;
     
 }
+
+#canvas {
+    position: absolute;
+    top:14%;
+    left:30%;
+    border:1px solid black;
+    
+}
+body{
+    font-family: 'Raleway', sans-serif;
+    background-color: black; 
+}
+
+#header{
+    font-size: 30px;
+    display:flex;
+    justify-content: flex-end;
+    background-color: white;
+    color:black; 
+    margin:0.9% 10% 0 6%;
+    box-shadow: 0 0 5px 1px white;
+}
+
+
+
+#apple-menu{
+    margin: -10px 350px 0px 0;
+}
+#header div{
+    margin: 2% 10% 1% 0;
+}
+
+.backgrounds{
+    margin: 38% 0 0 20%;
+}
+
+.changeTheme{
+    display: flex;
+    border-radius: 2px; 
+    font-size: 1.3rem;
+    cursor: pointer;
+    margin-bottom: 0.5%;
+    box-shadow: 0 0 30px 2px white;
+    padding: 1%;
+    border:none;
+}
+
+button:active, button:visited {
+    color: white;
+    background-color: black;
+}
+button:hover{
+    background-color:black;
+    color:white;
+    box-shadow: 0 0 50px 2px white;
+}
+#level-js, #points-js{
+    font-weight: bold;
+}
+#new-game{
+    display:none;
+}

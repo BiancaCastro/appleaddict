@@ -7,7 +7,7 @@ function Microsoft (game){
     this.y=20;
     this.w=40;
     this.h=40;
-    this.vy=2;
+    this.vy=1.5;
 
 }
 

@@ -91,7 +91,7 @@ Game.prototype.counter = function(object) {
 
 Game.prototype.incrementLevel = function() {
   this.objects.forEach(function(oneObject) {
-    oneObject.vy += 2;
+    oneObject.vy += 1.5;
   });
 };
 
