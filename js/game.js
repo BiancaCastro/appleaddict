@@ -105,7 +105,7 @@ Game.prototype.incrementLevel = function() {
 Game.prototype.stop = function() {
   clearInterval(this.interval);
   document.querySelector("#game-over").style.display="block";
-  document.querySelector("#audio").src="./audio/gameOverFinal.mp3";
+  document.querySelector("#audio").src="./audio/gameOverFina.mp3";
 };
 
 Game.prototype.gameOver = function() {
@@ -152,3 +152,5 @@ Game.prototype.setBackgroundChangersListneners = function(image) {
     }.bind(this)
   );
 };
+
+

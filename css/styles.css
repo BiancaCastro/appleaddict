@@ -180,7 +180,7 @@ button:hover{
     animation-duration: 20s;
 }
 #game-over p{
-    padding: 10%;
+    padding: 10px;
     text-align: center;
 }
 
@@ -191,4 +191,15 @@ button:hover{
 }
 #audio{
     visibility: hidden;
+}
+
+#final-buttons{
+    display:inline-block;
+    text-align:center;
+    padding: 2% 27%;
+}
+.repeat, .no-repeat {
+    font-size:15px;
+    border-radius:10px;
+
 }

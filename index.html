@@ -23,7 +23,7 @@
         <img class="happy-apple" src="imagenes/apple.png" alt="appleaddict" width="20%" height="auto">
         <h1>Appleaddict</h1>
         <h2>Are you a really fan of Apple?</h2>
-        <button>Try it!</button>
+        <button id="begin">Try it!</button>
     </div>
 
     <div id="new-game">
@@ -48,16 +48,13 @@
     <audio loop src="./audio/spaceMusic.mp3" autoplay id="audio"></audio>
     <div id="game-over">
             <p>GAME OVER</p>
+            <div id="final-buttons">
+            <button class="repeat">Play again</button>
+            <button class="no-repeat">Go!</button>
+        </div>
         </div>
 
-    <script>
-
-        document.querySelector("button").onclick = function () {
-            startGame();
-            document.querySelector("#presentation").style.display = "none";
-            document.querySelector("#new-game").style.display = "block";
-        }
-    </script>
+    <script type="text/javascript" src="js/events.js"></script>
 </body>
 
 </html>
