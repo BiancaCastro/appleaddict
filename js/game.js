@@ -94,6 +94,12 @@ Game.prototype.incrementLevel = function() {
   this.objects.forEach(function(oneObject) {
     oneObject.vy += 1.5;
   });
+  if(this.player.jobsModule>0){
+    this.player.jobsModule-=5;
+
+  }else{
+    this.player.jobsModule=0
+  }
 };
 
 Game.prototype.stop = function() {

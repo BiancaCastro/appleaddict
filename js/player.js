@@ -1,18 +1,21 @@
 function Player(game) {
   this.game = game;
   this.imgPlayer = new Image();
-  this.imgPlayer.src = "imagenes/stevejobs2.png";
+  this.imgPlayer.src = "imagenes/steveMoves.png";
   this.x = 0;
   this.y = 450;
-  this.w = 100;
-  this.h = 140;
+  this.w = 200;
+  this.h = 240;
   this.vx=50;
   this.firstJobX=0;
   this.JobY=0;
-  this.secondJobX=495;
+  this.secondJobX=464;
+  this.jobX=this.firstJobX;
+  this.thirdJobX=925;
   this.jobX=this.firstJobX;
   this.setListeners();
   this.framesCounter=0;
+  this.jobsModule = 10
 }
 
 Player.prototype.draw = function() {
@@ -33,15 +36,17 @@ Player.prototype.draw = function() {
 
 Player.prototype.animateImg = function() {
   
-  if(this.framesCounter%30===0){
+  if(this.framesCounter % this.jobsModule===0){
     this.jobX =this.secondJobX;
   } 
-  if(this.framesCounter%60===0){
+  if(this.framesCounter % (this.jobsModule+10)===0){
     this.jobX=this.firstJobX;
+  }
+  if(this.framesCounter % (this.jobsModule+20)===0){
+    this.jobX=this.thirdJobX;
     this.framesCounter=0;
   }
 
-  
 };
 
 Player.prototype.move=function(){
