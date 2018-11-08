@@ -1,4 +1,4 @@
-window.onload = function(){
+var startGame = function(){
     var game =new Game('canvas');
     
 

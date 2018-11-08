@@ -45,7 +45,7 @@
         <canvas id="canvas" height="700" width="600">
         </canvas>
     </div>
-    <audio src="./audio/spaceMusi.mp3" autoplay id="audio"></audio>
+    <audio loop src="./audio/spaceMusic.mp3" autoplay id="audio"></audio>
     <div id="game-over">
             <p>GAME OVER</p>
         </div>
@@ -53,6 +53,7 @@
     <script>
 
         document.querySelector("button").onclick = function () {
+            startGame();
             document.querySelector("#presentation").style.display = "none";
             document.querySelector("#new-game").style.display = "block";
         }
