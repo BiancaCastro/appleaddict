@@ -14,6 +14,7 @@ Game.prototype.reset = function() {
   this.background = new Background(this);
   this.player = new Player(this);
   this.objects = [];
+  this.player.framesCounter = 0;
 };
 
 Game.prototype.generateObjects = function() {
@@ -111,7 +112,7 @@ Game.prototype.start = function() {
       this.clear();
       this.draw();
       this.move();
-
+      this.player.framesCounter++;
       if (this.collision()) {
       }
     }.bind(this),
