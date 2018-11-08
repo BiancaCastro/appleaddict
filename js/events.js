@@ -10,5 +10,6 @@
         document.querySelector(".repeat").onclick = function () {
             document.querySelector("#game-over").style.display="none";
             startGame();
+            document.querySelector("#audio").src="./audio/spaceMusic.mp3";
         }
         
